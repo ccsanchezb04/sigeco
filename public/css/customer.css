@@ -1,0 +1,100 @@
+body { background-color: #666; }
+
+.contenedor { 
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #fff; 
+	padding: 20px;
+	margin-top: 80px; 
+}
+
+.logo img {	margin: 0 auto; }
+
+.menu {
+	margin: 25px auto;
+	text-align: center;
+}
+
+.btn-login {
+	background-color: #999;
+	color: #fff;
+	margin-right: 35px; 
+}
+
+.btn-login:hover {
+	background-color: #666;
+	color: #fff;
+}
+
+.panel-login { margin: 0 auto; }
+
+/* ============================================================================================= */
+/* ================================= Barra de navegacion Admin ================================= */
+
+.nav-admin, .nav-users {
+	background-color: #666;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+.nav-pills li.active a, .nav-pills li.active a:hover, .nav-pills li.active a:focus,
+.nav-admin li.active a, .nav-admin li.active a:hover, .nav-admin li.active a:focus {
+	color: #fff;
+	background-color: #E27E13;	
+}
+
+.nav-admin a, .nav-users a { 
+	color: #fff;
+	text-align: center; 
+}
+
+.nav-admin a:hover, .nav-users a:hover { color: #000; }
+
+.top-bar { margin-top: 20px; }
+
+.btn-add { 
+	background-color: #666;
+	color: #fff;
+}
+.btn-add:hover {
+	background-color: #bbb;
+	color: #fff;
+}
+/* ============================================================================================= */
+/* ============================================================================================= */
+
+/* ============================================================================================= */
+/* ================================= CRUD Usuarios Admin ================================= */
+
+.contenedor-crud {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px #fff; 
+	padding: 50px 80px;	
+	margin: 0 auto;
+	width: 800px;
+}
+
+#nombre, #apellido, #direccion { text-transform: uppercase; }
+
+#frm_register  {
+	margin-top: 35px; 
+	padding-left: 50px;
+}
+
+.panel-default {
+	background-color: transparent;
+	border-radius: 5px;
+	margin-top: 30px;	
+}
+
+/* ============================================================================================= */
+/* ============================================================================================= */
+
+/* ============================================================================================= */
+/* ========================================= Empleado ========================================== */
+
+.grupos { margin-top: 20px; }
+
+/* ============================================================================================= */
+/* ============================================================================================= */
