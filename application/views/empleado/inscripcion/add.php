@@ -5,7 +5,7 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<div class="contenedor">
-				<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger pull-right'>
+				<a href="<?php echo base_url(); ?>Empleado" type='button' class='btn btn-sm btn-danger pull-right'>
 					<span class="glyphicon glyphicon-remove"></span>
 				</a>
 				<div class="logo">
@@ -34,7 +34,7 @@
 							  	</div>
 							  	<div class="form-group">
 							    	<div class="col-lg-10">
-							      		<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" value="<?php echo set_value('contraseña') ?>">
+							      		<input type="password" class="form-control" name="password" placeholder="CONTRASEÑA" value="<?php echo set_value('password') ?>">
 							    	</div>
 							  	</div>
 							  	<div class="form-group">
@@ -67,19 +67,16 @@
 										<?php endforeach ?>
 						                </select>
 							    	</div>
-							  	</div>	
-								<div class="form-group">
-							    	<div class="col-lg-10">
-							      		<input type="hidden" class="form-control" name="fecha-inscripcion" value="<?php date('Y-m-d'); ?>">
-							      		<input type="hidden" class="form-control" name="rol" value="ESTUDIANTE">
-							      		<input type="hidden" class="form-control" name="esato" value="ACTIVO">
-							      		<input type="hidden" class="form-control" name="esato-insc" value="INSCRITO">
-							      		<input type="hidden" class="form-control" name="am-codigo" value="0">
-							    	</div>					    	
-							  	</div>
+							  	</div>								
 							  	<div class="form-group">
 							    	<div class="col-lg-10">
-							      		<input type="text" class="form-control" name="nom-acudiente" placeholder="NOMBRES ACUDIENTE" value="<?php echo set_value('nom-acudiente') ?>">
+							    		<input type="text" class="form-control" name="nom-acudiente" placeholder="NOMBRES ACUDIENTE" value="<?php echo set_value('nom-acudiente') ?>">
+							    		<input type="hidden" class="form-control" name="id-insc" value="0">
+							      		<input type="hidden" class="form-control" name="fecha-inscripcion" value="<?php echo date('Y-m-d'); ?>">
+							      		<input type="hidden" class="form-control" name="rol" value="ESTUDIANTE">
+							      		<input type="hidden" class="form-control" name="estado" value="ACTIVO">
+							      		<input type="hidden" class="form-control" name="estado-insc" value="INSCRITO">
+							      		<input type="hidden" class="form-control" name="am-codigo" value="0">
 							    	</div>					    	
 							  	</div>
 							  	<div class="form-group">

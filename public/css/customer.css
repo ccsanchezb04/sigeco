@@ -52,12 +52,17 @@ body { background-color: #666; }
 
 .top-bar { margin-top: 20px; }
 
-.btn-add { 
+.btn-add, .btn-matricula { 
+	background-color: #777;
+	color: #fff;
+}
+.btn-add:hover, .btn-matricula:hover {
 	background-color: #666;
 	color: #fff;
 }
-.btn-add:hover {
-	background-color: #bbb;
+
+#btn-cerrar:hover {
+	background-color: #d43f3a;
 	color: #fff;
 }
 /* ============================================================================================= */

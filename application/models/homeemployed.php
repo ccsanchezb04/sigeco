@@ -13,6 +13,7 @@ class Homeemployed extends CI_model
 	var $rol				 = '';
 	var $grupo				 = '';
 	var $fecha_inscripcion	 = '';
+	var $codigo_inscripcion  = '';
 	var $nombres_acudiente   = '';
 	var $apellidos_acudiente = '';
 	var $tel_movil_acudiente = '';
@@ -33,56 +34,7 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 
-	public function addInsc()
-	{
-		$this->no_identificacion   = $this->input->post('id');
-		$this->nombres 			   = $this->input->post('nombres');
-		$this->apellidos 		   = $this->input->post('apellidos');
-		$this->password 		   = $this->input->post('password');
-		$this->direccion 		   = $this->input->post('direccion');
-		$this->tel_fijo 		   = $this->input->post('telfijo');
-		$this->tel_movil 		   = $this->input->post('telmovil');
-		$this->correo_electronico  = $this->input->post('correo');
-		$this->rol				   = $this->input->post('rol');
-		$this->estado 		       = $this->input->post('estado');
-		$this->estado_insc	       = $this->input->post('estado-insc');
-		$this->grupo			   = $this->input->post('grupo');
-		$this->fecha_inscripcion   = $this->input->post('fecha-inscripcion');			
-		$this->nombres_acudiente   = $this->input->post('nom-acudiente');
-		$this->apellidos_acudiente = $this->input->post('ape-acudiente');
-		$this->tel_movil_acudiente = $this->input->post('telmovil-acudiente');		
-		$this->correo_acudiente	   = $this->input->post('correo-acudiente');
-		$this->nombres_padre 	   = $this->input->post('nom-padre');
-		$this->apellidos_padre 	   = $this->input->post('ape-padre');
-		$this->tel_movil_padre 	   = $this->input->post('telmovil-padre');		
-		$this->nombres_madre 	   = $this->input->post('nom-madre');
-		$this->apellidos_madre 	   = $this->input->post('ape-madre');
-		$this->tel_movil_madre 	   = $this->input->post('telmovil-madre');		
-		$this->am_codigo 	       = $this->input->post('am_codigo');
-
-
-		if (!$this->db->insert('usuarios', $this)) 
-		{
-			//echo mysql_error($query);
-			$this->db->set('no_identificacion', $this->no_identificacion);
-			$this->db->set('estado', $this->estado_insc);
-			$this->db->set('fecha_inscripcion', $this->fecha_inscripcion);
-			$this->db->insert('inscripciones');
-			echo "<script type='text/javascript'>";
-			echo "alert('Problemas al adicionar el estudiante!');";
-			echo "</script>";
-		}
-		else
-		{
-			//echo mysql_error($query);
-			echo "<script type='text/javascript'>";
-			echo "alert('El estudiante se adiciono con exito....!');";
-			echo "window.location.replace('".base_url()."Empleado');";
-			echo "</script>";
-		}
-	}
-
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================ PRIMEROS ================================= */
 	public function lst1a()
 	{
@@ -108,9 +60,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================ SEGUNDOS ================================= */
 	public function lst2a()
 	{
@@ -136,9 +88,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================ TERCEROS ================================= */
 	public function lst3a()
 	{
@@ -164,9 +116,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================= CUARTOS ================================= */
 	public function lst4a()
 	{
@@ -194,7 +146,7 @@ class Homeemployed extends CI_model
 	/* =========================================================================== */
 	/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================ QUINTOS ================================= */
 	public function lst5a()
 	{
@@ -220,9 +172,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================= SEXTOS ================================== */
 	public function lst6a()
 	{
@@ -248,9 +200,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================ SEPTIMOS ================================= */
 	public function lst7a()
 	{
@@ -276,9 +228,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================= OCTAVOS ================================= */
 	public function lst8a()
 	{
@@ -304,9 +256,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================= NOVENOS ================================= */
 	public function lst9a()
 	{
@@ -332,9 +284,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================= DECIMOS ================================= */
 	public function lst10a()
 	{
@@ -360,9 +312,9 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
 
-	/* =========================================================================== */
+/* =========================================================================== */
 	/* ================================ UNDECIMOS ================================ */
 	public function lst11a()
 	{
@@ -388,5 +340,153 @@ class Homeemployed extends CI_model
 		return $query->result();
 	}
 	/* =========================================================================== */
-	/* =========================================================================== */
+/* =========================================================================== */
+
+	public function addInsc()
+	{
+		$usu = array(
+   			'no_identificacion'   => $this->input->post('id'),
+   			'nombres' 			  => $this->input->post('nombres'),
+   			'apellidos' 		  => $this->input->post('apellidos'),
+   			'password' 			  => $this->input->post('password'),
+   			'direccion'           => $this->input->post('direccion'),
+   			'tel_fijo' 			  => $this->input->post('telfijo'),
+   			'tel_movil' 		  => $this->input->post('telmovil'),
+   			'correo_electronico'  => $this->input->post('correo'),
+   			'rol' 				  => $this->input->post('rol'),
+   			'estado' 			  => $this->input->post('estado'),
+   			'nombres_acudiente'   => $this->input->post('nom-acudiente'),
+   			'apellidos_acudiente' => $this->input->post('ape-acudiente'),
+   			'tel_movil_acudiente' => $this->input->post('telmovil-acudiente'),
+   			'correo_acudiente'	  => $this->input->post('correo-acudiente'),
+   			'nombres_padre' 	  => $this->input->post('nom-padre'),
+   			'apellidos_padre' 	  => $this->input->post('ape-padre'),
+   			'tel_movil_padre'     => $this->input->post('telmovil-padre'),
+   			'nombres_madre' 	  => $this->input->post('nom-madre'),
+   			'apellidos_madre' 	  => $this->input->post('ape-madre'),
+   			'tel_movil_madre' 	  => $this->input->post('telmovil-madre'),
+   			'am_codigo' 		  => $this->input->post('am_codigo')
+		);
+	
+		$insc = array(
+			'codigo_inscripcion' => $this->input->post('id-insc'),
+			'no_identificacion'  => $this->input->post('id'),
+			'estado'		 	 => $this->input->post('estado-insc'),
+			'grupo' 			 => $this->input->post('grupo'),
+			'fecha_inscripcion'  => $this->input->post('fecha-inscripcion') 
+		);
+
+		if (!$this->db->insert('usuarios', $usu)) 
+		{
+			//echo mysql_error($query);			
+			echo "<script type='text/javascript'>";
+			echo "alert('Problemas al adicionar el estudiante!');";
+			echo "</script>";
+		}
+		else
+		{
+			//echo mysql_error($query);
+			$this->db->insert('inscripciones', $insc);
+			echo "<script type='text/javascript'>";
+			echo "alert('El estudiante se adiciono con exito....!');";
+			echo "window.location.replace('".base_url()."Empleado');";
+			echo "</script>";
+		}
+	}
+
+	public function lstInsc($no_identificacion)
+	{
+		$this->no_identificacion = $no_identificacion;
+
+		$query = $this->db->get_where('usuarios', array('no_identificacion' => $this->no_identificacion));
+		return $query->result();
+	}
+
+	public function lstdInsc($no_identificacion)
+	{
+		$this->no_identificacion = $no_identificacion;
+
+		$query = $this->db->get_where('inscripciones', array('no_identificacion' => $this->no_identificacion));
+		return $query->result();
+	}
+
+	public function updInsc($no_identificacion)
+	{	
+		$this->no_identificacion = $no_identificacion;		
+
+		$usu = array(
+   			//'no_identificacion'   => $this->input->post('id'),
+   			'nombres' 			  => $this->input->post('nombres'),
+   			'apellidos' 		  => $this->input->post('apellidos'),
+   			'password' 			  => $this->input->post('password'),
+   			'direccion'           => $this->input->post('direccion'),
+   			'tel_fijo' 			  => $this->input->post('telfijo'),
+   			'tel_movil' 		  => $this->input->post('telmovil'),
+   			'correo_electronico'  => $this->input->post('correo'),
+   			'rol' 				  => $this->input->post('rol'),
+   			'estado' 			  => $this->input->post('estado'),
+   			'nombres_acudiente'   => $this->input->post('nom-acudiente'),
+   			'apellidos_acudiente' => $this->input->post('ape-acudiente'),
+   			'tel_movil_acudiente' => $this->input->post('telmovil-acudiente'),
+   			'correo_acudiente'	  => $this->input->post('correo-acudiente'),
+   			'nombres_padre' 	  => $this->input->post('nom-padre'),
+   			'apellidos_padre' 	  => $this->input->post('ape-padre'),
+   			'tel_movil_padre'     => $this->input->post('telmovil-padre'),
+   			'nombres_madre' 	  => $this->input->post('nom-madre'),
+   			'apellidos_madre' 	  => $this->input->post('ape-madre'),
+   			'tel_movil_madre' 	  => $this->input->post('telmovil-madre'),
+   			'am_codigo' 		  => $this->input->post('am_codigo')
+		);
+
+		//var_dump($usu);
+	
+		$insc = array(
+			//'codigo_inscripcion' => $this->input->post('id-insc'),
+			'no_identificacion'  => $this->input->post('id'),
+			'estado'		 	 => $this->input->post('estado-insc'),
+			'grupo' 			 => $this->input->post('grupo'),
+			'fecha_inscripcion'  => $this->input->post('fecha-inscripcion') 
+		);
+
+		$this->db->where('no_identificacion', $this->no_identificacion);
+
+		if (!$this->db->update('usuarios', $usu)) 
+		{						
+			echo "<script type='text/javascript'>";
+			echo "alert('Problemas al actualizar el estudiante!');";
+			echo "</script>";
+		}
+		else
+		{				
+			$this->db->where('no_identificacion', $this->no_identificacion);
+			$this->db->update('inscripciones', $insc);			
+			echo "<script type='text/javascript'>";
+			echo "alert('El estudiante se modifico con exito....!');";
+			echo "window.location.replace('".base_url()."Empleado');";
+			echo "</script>";
+		}
+	}
+	
+	public function dltInsc($no_identificacion)
+	{
+		$this->no_identificacion = $no_identificacion;
+
+		$this->db->where('no_identificacion', $this->no_identificacion);
+
+		if (!$this->db->delete('inscripciones')) 
+		{
+			echo "<script type='text/javascript'>";
+			echo "alert('Problemas al Eliminar el estudiante!');";
+			echo "</script>";
+		}
+		else
+		{
+			$this->db->where('no_identificacion', $this->no_identificacion);
+			$this->db->delete('usuarios');
+			echo "<script type='text/javascript'>";
+			echo "alert('El estudiante se elimino con exito....!');";
+			echo "window.location.replace('".base_url()."Empleado');";
+			echo "</script>";
+		}
+	}
 }

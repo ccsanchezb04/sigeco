@@ -1,4 +1,4 @@
-<?php $link = 1; ?>
+<?php $admin = 1; ?>
 
 <body>
 
@@ -10,45 +10,7 @@
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
 				</div>
 
-				<nav class="navbar nav-admin" role="navigation">
-					
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-			   			<ul class="nav navbar-nav">
-							<li class="<?php if ($link==1) echo "active"; ?>">
-								<a href="<?php echo base_url(); ?>Admin">
-									Usuarios&nbsp;<span class="glyphicon glyphicon-user"></span>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo base_url(); ?>Admin/materia">
-									Materias&nbsp;<span class="glyphicon glyphicon-book"></span>
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo base_url(); ?>Admin/grupo">
-									Grupos&nbsp;<span class="glyphicon glyphicon-th-large"></span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Horario&nbsp;<span class="glyphicon glyphicon-time"></span>
-								</a>
-							</li>							
-							<li>
-								<a href="#">
-									Otros&nbsp;<span class="glyphicon glyphicon-star"></span>
-								</a>
-							</li>
-						</ul>
-						 <ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="<?php echo base_url(); ?>login/close" class="btn-danger">
-									Cerrar Sesión&nbsp;<span class="glyphicon glyphicon-log-out"></span>
-								</a>
-							</li>					
-						</ul>
-					</div>
-				</nav>				
+				<?php $this->load->view('layout/topnavbar'); ?>				
 
 				<!-- Tab panels -->
 				<div class="tab-content">

@@ -10,54 +10,8 @@
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
 				</div>
 				
-				<nav class="navbar nav-admin" role="navigation">
-					<div class="navbar-header">
-				    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-				      		<span class="sr-only">Toggle navigation</span>
-				      		<span class="icon-bar"></span>
-				      		<span class="icon-bar"></span>
-				    		<span class="icon-bar"></span>
-				    	</button>
-					</div>
+				<?php $this->load->view('layout/topnavbar'); ?>
 					
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-			   			<ul class="nav navbar-nav">
-
-							<li>
-								<a href="<?php echo base_url(); ?>Admin">
-									Usiarios&nbsp;<span class="glyphicon glyphicon-user"></span>
-								</a>
-							</li>
-							<li class="<?php if ($link==2) echo "active"; ?>">
-								<a href="<?php echo base_url(); ?>Admin/materia">
-									Materias&nbsp;<span class="glyphicon glyphicon-book">
-								</a>
-							</li>
-							<li>
-								<a href="<?php echo base_url(); ?>Admin/grupo">
-									Grupos&nbsp;<span class="glyphicon glyphicon-th-large">
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Horario&nbsp;<span class="glyphicon glyphicon-time">
-								</a>
-							</li>							
-							<li>
-								<a href="#">
-									Otros&nbsp;<span class="glyphicon glyphicon-star">
-								</a>
-							</li>
-						</ul>
-						 <ul class="nav navbar-nav navbar-right">
-							<li class="pull-right">
-								<a href="<?php echo base_url(); ?>index.php/login/close" class="btn-danger">
-									Cerrar Sesión&nbsp;<span class="glyphicon glyphicon-log-out"></span>
-								</a>
-							</li>					
-						</ul>
-					</div>
-				</nav>	
 				<div class="tab-content">
 					<div class="top-bar">
 						<div class="row">

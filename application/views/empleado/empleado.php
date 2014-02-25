@@ -1,5 +1,5 @@
 
-<?php $link = 1; ?>
+<?php $empleado = 1; ?>
 
 <body>
 
@@ -11,44 +11,7 @@
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
 				</div>
 
-				<nav class="navbar nav-admin" role="navigation">					
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-			   			<ul class="nav navbar-nav">
-							<li class="<?php if ($link==1) echo "active"; ?>">
-								<a href="#">
-									Inscripción&nbsp;<span class="glyphicon glyphicon-user"></span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Matricula&nbsp;<span class="glyphicon glyphicon-check"></span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Asignación&nbsp;<span class="glyphicon glyphicon-star"></span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Estudiantes&nbsp;<span class="glyphicon glyphicon-lock"></span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									Grupos&nbsp;<span class="glyphicon glyphicon-th-large"></span>
-								</a>
-							</li>							
-						</ul>
-						 <ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="<?php echo base_url(); ?>login/close" class="btn-danger">
-									Cerrar Sesión&nbsp;<span class="glyphicon glyphicon-log-out"></span>
-								</a>
-							</li>					
-						</ul>
-					</div>
-				</nav>
+				<?php $this->load->view('layout/topnavbar') ?>
 
 				<div class="top-bar">
 					<div class="row">
@@ -144,16 +107,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -161,6 +124,8 @@
 											<?php endforeach ?>
 										</table>
 								  	</div>
+
+								  	
 
 								  	<div class="tab-pane" id="prim-b">
 								  		<table class="table table-striped">
@@ -176,16 +141,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -208,16 +173,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -240,16 +205,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -300,16 +265,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -332,16 +297,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -364,16 +329,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -396,16 +361,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a> 					
 												</td>
@@ -456,16 +421,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning'>
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning'>
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -488,16 +453,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -520,16 +485,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -552,16 +517,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -612,16 +577,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -644,16 +609,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -676,16 +641,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -708,16 +673,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -768,16 +733,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -800,16 +765,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -832,16 +797,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -864,16 +829,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -924,16 +889,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>				
 												</td>
@@ -952,20 +917,20 @@
 											</tr>
 											<?php foreach ($lst6b as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>				
 												</td>
@@ -984,20 +949,20 @@
 											</tr>
 											<?php foreach ($lst6c as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1016,20 +981,20 @@
 											</tr>
 											<?php foreach ($lst6d as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1076,20 +1041,20 @@
 											</tr>
 											<?php foreach ($lst7a as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1108,20 +1073,20 @@
 											</tr>
 											<?php foreach ($lst7b as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1140,20 +1105,20 @@
 											</tr>
 											<?php foreach ($lst7c as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1172,20 +1137,20 @@
 											</tr>
 											<?php foreach ($lst7d as $key): ?>
 											<tr>
-												<td><?php echo $key->codigo_inscripcion; ?></td>
+												<td><?php echo $key->codigo_inscripcioncodigo_inscripcion; ?></td>
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1236,16 +1201,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1268,16 +1233,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1300,16 +1265,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1332,16 +1297,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1392,16 +1357,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1424,16 +1389,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1456,16 +1421,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1488,16 +1453,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1548,16 +1513,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1580,13 +1545,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a> 
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1609,13 +1577,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a> 
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1638,13 +1609,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning'>
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a> 
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1695,16 +1669,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1727,16 +1701,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1759,16 +1733,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
@@ -1791,16 +1765,16 @@
 												<td><?php echo $key->fecha_inscripcion; ?></td>
 												<td><?php echo $key->no_identificacion; ?></td>						
 												<td>					
-													<a href="<?php echo base_url(); ?>Admin/lstUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
+													<a href="<?php echo base_url(); ?>Empleado/lstInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" data-original-title="CONSULTAR">
 														<span class='glyphicon glyphicon-eye-open'></span>
 													</a>
-													<a href="<?php echo base_url(); ?>Admin/updUser/<?php echo $key->codigo_inscripcion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
+													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
-													<a href="#" type='button' class='btn btn-sm btn-primary' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a> 
-													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->codigo_inscripcion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
+													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
 												</td>
