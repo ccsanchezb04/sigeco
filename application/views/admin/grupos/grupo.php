@@ -1,4 +1,4 @@
-<?php $link = 3; ?>
+<?php $data['seccion'] = 3; ?>
 
 <body>
 
@@ -10,7 +10,7 @@
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
 				</div>
 
-				<?php $this->load->view('layout/topnavbar'); ?>
+				<?php $this->load->view('layout/topnavbar', $data); ?>
 
 				<div class="tab-content">
 					<div class="top-bar">

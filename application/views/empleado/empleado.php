@@ -1,5 +1,5 @@
 
-<?php $empleado = 1; ?>
+<?php $data['seccion'] = 1; ?>
 
 <body>
 
@@ -11,7 +11,7 @@
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
 				</div>
 
-				<?php $this->load->view('layout/topnavbar') ?>
+				<?php $this->load->view('layout/topnavbar', $data); ?>
 
 				<div class="top-bar">
 					<div class="row">
@@ -113,9 +113,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a>
+												<?php endif ?>												
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -147,9 +153,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -179,9 +191,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+											<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -211,9 +229,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+											<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -271,9 +295,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -303,9 +333,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -335,9 +371,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -367,9 +409,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a> 					
@@ -427,9 +475,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning'>
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
 													</a>
+												<?php endif ?>
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -459,9 +513,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -491,9 +551,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -523,9 +589,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -583,9 +655,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -615,9 +693,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -647,9 +731,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+											<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -679,9 +769,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -739,9 +835,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -771,9 +873,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -803,9 +911,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -835,9 +949,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -895,9 +1015,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>				
@@ -927,9 +1053,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>				
@@ -959,9 +1091,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -991,9 +1129,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1051,9 +1195,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1083,9 +1233,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1115,9 +1271,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1147,9 +1309,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1207,9 +1375,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1239,9 +1413,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1271,9 +1451,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1303,9 +1489,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1363,9 +1555,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1395,9 +1593,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1427,9 +1631,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1459,9 +1669,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1519,9 +1735,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1551,9 +1773,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1583,9 +1811,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1615,9 +1849,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1675,9 +1915,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1707,9 +1953,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1739,9 +1991,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					
@@ -1771,9 +2029,15 @@
 													<a href="<?php echo base_url(); ?>Empleado/updInsc/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="bottom" data-original-title="MODIFICAR">
 														<span class='glyphicon glyphicon-cog'></span>
 													</a>
+												<?php if ($key->estado == 'MATRICULADO'): ?>
+													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='button' class='btn btn-sm btn-matricula' disabled="disabled" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
+														<span class='glyphicon glyphicon-check'></span>
+													</a>
+												<?php else: ?>
 													<a href="<?php echo base_url(); ?>Empleado/addMat/<?php echo $key->no_identificacion; ?>" type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' class='btn btn-sm btn-matricula' type='submit' data-toggle="tooltip" data-placement="bottom" data-original-title="MATRICULAR">
 														<span class='glyphicon glyphicon-check'></span>
-													</a> 
+													</a>
+												<?php endif ?> 
 													<a href="<?php echo base_url(); ?>" type='button' class='btn btn-sm btn-danger btn-delete' data-id="<?php echo $key->no_identificacion; ?>" data-rol="inscripcion" data-toggle="tooltip" data-placement="right" data-original-title="ELIMINAR">
 														<span class='glyphicon glyphicon-remove-sign'></span>
 													</a>					

@@ -22,6 +22,7 @@ class Admin extends CI_Controller {
 		$data['lsta'] = $this->homeadmin->lstAdmin();
 		$data['lste'] = $this->homeadmin->lstEmpleado();
 		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['seccion'] = 1;
 		$this->load->view('layout/header');
 		$this->load->view('admin/admin', $data);
 		$this->load->view('layout/footer');

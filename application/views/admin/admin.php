@@ -1,4 +1,4 @@
-<?php $admin = 1; ?>
+<?php $data['seccion'] = 1; ?>
 
 <body>
 
@@ -10,7 +10,7 @@
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
 				</div>
 
-				<?php $this->load->view('layout/topnavbar'); ?>				
+				<?php $this->load->view('layout/topnavbar', $data); ?>				
 
 				<!-- Tab panels -->
 				<div class="tab-content">

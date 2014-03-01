@@ -33,6 +33,10 @@
 							window.location.replace('<?php echo base_url(); ?>Empleado/dltInsc/'+$uid);
 							break;
 
+						case 'matricula':
+							window.location.replace('<?php echo base_url(); ?>Empleado/dltMat/'+$uid);
+							break;
+
 						default:
 							alert('No se puede eliminar el registro');
 							break;

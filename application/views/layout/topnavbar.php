@@ -1,7 +1,4 @@
-<?php 
-	$admin = 0;
-	$empleado =0;
-?>
+
 <nav class="navbar nav-admin" role="navigation">
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
@@ -10,27 +7,27 @@
 	{
 		case 'ADMIN':
 	?>
-			<li class="<?php if ($admin==1) echo "active"; ?>">
+			<li <?php if ($seccion==1) echo "class='active'"; ?>>
 					<a href="<?php echo base_url(); ?>Admin">
 					Usuarios&nbsp;<span class="glyphicon glyphicon-user"></span>
 				</a>
 			</li>
-			<li class="<?php if ($admin==2) echo "active"; ?>">
+			<li <?php if ($seccion==2) echo "class='active'"; ?>>
 				<a href="<?php echo base_url(); ?>Admin/materia">
 					Materias&nbsp;<span class="glyphicon glyphicon-book"></span>
 				</a>
 			</li>
-			<li class="<?php if ($admin==3) echo "active"; ?>">
+			<li <?php if ($seccion==3) echo "class='active'"; ?>>
 				<a href="<?php echo base_url(); ?>Admin/grupo">
 					Grupos&nbsp;<span class="glyphicon glyphicon-th-large"></span>
 				</a>
 			</li>
-			<li class="<?php if ($admin==4) echo "active"; ?>">
+			<li <?php if ($seccion==4) echo "class='active'"; ?>>
 				<a href="#">
 					Horario&nbsp;<span class="glyphicon glyphicon-time"></span>
 				</a>
 			</li>							
-			<li class="<?php if ($admin==5) echo "active"; ?>">
+			<li <?php if ($seccion==5) echo "class='active'"; ?>>
 				<a href="#">
 					Otros&nbsp;<span class="glyphicon glyphicon-star"></span>
 				</a>
@@ -40,27 +37,27 @@
 
 		case 'EMPLEADO':
 	?>
-			<li class="<?php if ($empleado==1) echo "active"; ?>">
-				<a href="#">
+			<li <?php if ($seccion==1) echo "class='active'"; ?>>
+				<a href="<?php echo base_url(); ?>Empleado">
 					Inscripción&nbsp;<span class="glyphicon glyphicon-user"></span>
 				</a>
-			</li class="<?php if ($empleado==2) echo "active"; ?>">
-			<li>
-				<a href="#">
+			</li >
+			<li <?php if ($seccion==2) echo "class='active'"; ?>>
+				<a href="<?php echo base_url(); ?>Empleado/matricula">
 					Matricula&nbsp;<span class="glyphicon glyphicon-check"></span>
 				</a>
 			</li>
-			<li class="<?php if ($empleado==3) echo "active"; ?>">
+			<li <?php if ($seccion==3) echo "class='active'"; ?>>
 				<a href="#">
 					Asignación&nbsp;<span class="glyphicon glyphicon-star"></span>
 				</a>
 			</li>
-			<li class="<?php if ($empleado==4) echo "active"; ?>">
+			<li <?php if ($seccion==4) echo "class='active'"; ?>>
 				<a href="#">
 					Estudiantes&nbsp;<span class="glyphicon glyphicon-lock"></span>
 				</a>
 			</li>
-			<li class="<?php if ($empleado==5) echo "active"; ?>">
+			<li <?php if ($seccion==5) echo "class='active'"; ?>>
 				<a href="#">
 					Grupos&nbsp;<span class="glyphicon glyphicon-th-large"></span>
 				</a>
@@ -72,7 +69,7 @@
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-				<a href="<?php echo base_url(); ?>login/close" class="btn-danger">
+				<a href="<?php echo base_url(); ?>login/close" class="btn-danger" id="btn-cerrar">
 					Cerrar Sesión&nbsp;<span class="glyphicon glyphicon-log-out"></span>
 				</a>
 			</li>					
