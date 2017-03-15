@@ -56,7 +56,6 @@ class Inicio extends CI_model
    			'nombres_madre' 	  => $this->input->post('nom-madre'),
    			'apellidos_madre' 	  => $this->input->post('ape-madre'),
    			'tel_movil_madre' 	  => $this->input->post('telmovil-madre'),
-   			'am_codigo' 		  => $this->input->post('am_codigo')
 		);
 	
 		$insc = array(
@@ -103,7 +102,8 @@ class Inicio extends CI_model
 		
 		foreach ($query->result() as $key) 
 		{
-			$this->session->set_userdata(array('rol'=>$key->rol));
+			$this->session->set_userdata(array('rol'=>$key->rol,
+											   'idUser'=>$key->no_identificacion));
 		}
 		if ($query->num_rows() > 0) 
 		{

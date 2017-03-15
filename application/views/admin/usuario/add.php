@@ -72,7 +72,7 @@
 						                    <option value="">SELECCIONE ROL...</option>
 						                    <option value="ADMIN">ADMIN</option>
 						                    <option value="EMPLEADO">EMPLEADO</option>
-						                    <option value="PROFESOR">PROFESOR</option><input type="hidden" name="am_codigo" value="0">
+						                    <option value="PROFESOR">PROFESOR</option>
 						                </select>
 							    	</div>
 							  	</div>				

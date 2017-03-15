@@ -26,7 +26,6 @@ class Homeemployed extends CI_model
 	var $tel_movil_madre 	 = '';
 	var $estado 		     = '';
 	var $estado_insc	     = '';
-	var $am_codigo 	   		 = '';
 
 	public function index()
 	{
@@ -365,7 +364,6 @@ class Homeemployed extends CI_model
    			'nombres_madre' 	  => $this->input->post('nom-madre'),
    			'apellidos_madre' 	  => $this->input->post('ape-madre'),
    			'tel_movil_madre' 	  => $this->input->post('telmovil-madre'),
-   			'am_codigo' 		  => $this->input->post('am_codigo')
 		);
 	
 		$insc = array(
@@ -435,7 +433,6 @@ class Homeemployed extends CI_model
    			'nombres_madre' 	  => $this->input->post('nom-madre'),
    			'apellidos_madre' 	  => $this->input->post('ape-madre'),
    			'tel_movil_madre' 	  => $this->input->post('telmovil-madre'),
-   			'am_codigo' 		  => $this->input->post('am_codigo')
 		);
 
 		//var_dump($usu);
@@ -488,5 +485,14 @@ class Homeemployed extends CI_model
 			echo "window.location.replace('".base_url()."Empleado');";
 			echo "</script>";
 		}
+	}
+
+	public function conDatos($grupo)
+	{
+		$this->grupo = $grupo;
+
+		$this->db->get_where('inscripciones', array('grupo' => '$this->grupo'));
+		$query = $this->$this->db->count_all_results('inscripciones');
+		return $query->result();
 	}
 }

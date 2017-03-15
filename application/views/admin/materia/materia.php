@@ -5,6 +5,9 @@
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
+			<div id="cinta1">
+				<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/cinta1.png">
+			</div>
 			<div class="contenedor">
 				<div class="logo">
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
@@ -47,7 +50,7 @@
 							</tr>
 							<?php foreach ($primaria as $key): ?> 
 							<tr>
-								<td><?php echo $key->nombre; ?></td>
+								<td><?php echo $key->nombre_materia; ?></td>
 								<td>					
 									<a href="<?php echo base_url(); ?>Admin/lstMateria/<?php echo $key->codigo_materia; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" title="CONSULTAR">
 										<span class='glyphicon glyphicon-eye-open'></span>
@@ -71,7 +74,7 @@
 							</tr>
 							<?php foreach ($secundaria as $key): ?>
 							<tr>
-								<td><?php echo $key->nombre; ?></td>
+								<td><?php echo $key->nombre_materia; ?></td>
 								<td>					
 									<a href="<?php echo base_url(); ?>Admin/lstMateria/<?php echo $key->codigo_materia; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" title="CONSULTAR">
 										<span class='glyphicon glyphicon-eye-open'></span>
@@ -96,7 +99,7 @@
 							</tr>
 							<?php foreach ($media as $key): ?>
 							<tr>
-								<td><?php echo $key->nombre; ?></td>
+								<td><?php echo $key->nombre_materia; ?></td>
 								<td>					
 									<a href="<?php echo base_url(); ?>Admin/lstMateria/<?php echo $key->codigo_materia; ?>" type='button' class='btn btn-sm btn-warning' data-toggle="tooltip" data-placement="left" title="CONSULTAR">
 										<span class='glyphicon glyphicon-eye-open'></span>
@@ -114,5 +117,9 @@
 					</div>
 				</div>
 			</div>
+			<div id="cinta2">
+				<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/cinta2.png">
+			</div>
 		</div>
+		<div class="col-md-1"></div>
 	</div>

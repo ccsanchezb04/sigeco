@@ -27,6 +27,10 @@
 							window.location.replace('<?php echo base_url(); ?>Admin/dltGrupo/'+$uid);
 							break;
 
+						case 'horario':
+							window.location.replace('<?php echo base_url(); ?>Admin/dltHorario/'+$uid);
+							break;
+
 						/* ========================== EMPLEADO ========================== */
 
 						case 'inscripcion':
@@ -35,6 +39,14 @@
 
 						case 'matricula':
 							window.location.replace('<?php echo base_url(); ?>Empleado/dltMat/'+$uid);
+							break;
+
+						case 'aj':
+							window.location.replace('<?php echo base_url(); ?>Empleado/dltAj/'+$uid);
+							break;
+
+						case 'asig':
+							window.location.replace('<?php echo base_url(); ?>Empleado/dltAsig/'+$uid);
 							break;
 
 						default:
@@ -62,6 +74,13 @@
 				$('#inicio').fadeIn(1500);
 			});
 
+			$('#alert-content').on('click', '#alert', function(event) {
+				event.preventDefault();
+
+				$('#alert-content').removeClass('.bounceIn');
+				$('#alert-content').addClass('.bounceOut')
+			});	
+
 			/*$('body').on('click', '.btn-inscrip', function(event) {
 				event.preventDefault();
 				event.stopPropagation();
@@ -73,6 +92,8 @@
 			});*/
 		});
 	</script>
-	<script src="<?php echo base_url(); ?>public/js/bootstrap.min.js"></script>	
+	<script src="<?php echo base_url(); ?>public/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>public/js/bootstrapValidator.min.js"></script>
+	<script src="<?php echo base_url(); ?>public/js/ajax.js"></script>	
 </body>
 </html>

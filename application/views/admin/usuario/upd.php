@@ -72,7 +72,7 @@
 					                    <option value="">SELECCIONE ROL...</option>
 					                    <option value="ADMIN" <?php if ($key->rol == "ADMIN") echo "selected=''selected"; ?>>ADMIN</option>
 					                    <option value="EMPLEADO" <?php if ($key->rol == "EMPLEADO") echo "selected=''selected"; ?>>EMPLEADO</option>
-					                    <option value="PROFESOR" <?php if ($key->rol == "PROFESOR") echo "selected=''selected"; ?>>PROFESOR</option><input type="hidden" name="am_codigo" value="0">
+					                    <option value="PROFESOR" <?php if ($key->rol == "PROFESOR") echo "selected=''selected"; ?>>PROFESOR</option>
 					                </select>
 						    	</div>
 						  	</div>				

@@ -23,15 +23,10 @@
 				</a>
 			</li>
 			<li <?php if ($seccion==4) echo "class='active'"; ?>>
-				<a href="#">
+				<a href="<?php echo base_url(); ?>Admin/horario">
 					Horario&nbsp;<span class="glyphicon glyphicon-time"></span>
 				</a>
-			</li>							
-			<li <?php if ($seccion==5) echo "class='active'"; ?>>
-				<a href="#">
-					Otros&nbsp;<span class="glyphicon glyphicon-star"></span>
-				</a>
-			</li>
+			</li>										
 	<?php
 			break;
 
@@ -48,17 +43,12 @@
 				</a>
 			</li>
 			<li <?php if ($seccion==3) echo "class='active'"; ?>>
-				<a href="#">
+				<a href="<?php echo base_url(); ?>Empleado/asignacion">
 					Asignación&nbsp;<span class="glyphicon glyphicon-star"></span>
 				</a>
 			</li>
 			<li <?php if ($seccion==4) echo "class='active'"; ?>>
-				<a href="#">
-					Estudiantes&nbsp;<span class="glyphicon glyphicon-lock"></span>
-				</a>
-			</li>
-			<li <?php if ($seccion==5) echo "class='active'"; ?>>
-				<a href="#">
+				<a href="<?php echo base_url(); ?>Empleado/grupos">
 					Grupos&nbsp;<span class="glyphicon glyphicon-th-large"></span>
 				</a>
 			</li>

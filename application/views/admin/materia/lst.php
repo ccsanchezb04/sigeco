@@ -21,7 +21,7 @@
 						</tr>
 						<tr>
 							<td>Nombre</td>
-							<td><?php echo $key->nombre; ?></td>
+							<td><?php echo $key->nombre_materia; ?></td>
 						</tr>
 						<tr>
 							<td>Nivel</td>

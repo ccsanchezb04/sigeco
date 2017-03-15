@@ -26,13 +26,31 @@
 						                    <option value="MEDIA">MEDIA</option>
 						                </select>
 						                <input type="hidden" class="form-control" id="id-grupo" name="id-grupo" value="0">
-							    	</div>
-							  	</div>  
+							    	</div>							    	
+							  	</div>							  	 
 							  	<div class="form-group">
 							    	<div class="col-lg-10">
 							      		<input type="text" class="form-control" id="grupo" name="grupo" placeholder="NOMBRE DE GRUPO" value="<?php echo set_value('grupo') ?>">
 							    	</div>
 							  	</div>
+							  	<div class="form-group">
+								  	<div class="col-lg-10">
+							      		<select name="nombre" class="form-control">
+						                    <option value="">SELECCIONE NOMBRE...</option>
+						                    <option value="PRIMERO">PRIMERO</option>
+						                    <option value="SEGUNDO">SEGUNDO</option>
+						                    <option value="TERCERO">TERCERO</option>					                    
+						                    <option value="CUARTO">CUARTO</option>
+						                    <option value="QUINTO">QUINTO</option>
+						                    <option value="SEXTO">SEXTO</option>					                    
+						                    <option value="SEPTIMO">SEPTIMO</option>
+						                    <option value="OCTAVO">OCTAVO</option>
+						                    <option value="NOVENO">NOVENO</option>					                    
+						                    <option value="DECIMO">DECIMO</option>
+						                    <option value="UNDECIMO">UNDECIMO</option>					                    
+						                </select>
+						            </div>					                
+						    	</div>
 							  	<div class="form-group">
 							    	<div class="col-lg-10">
 							      		<input type="text" class="form-control" id="cupo" name="cupo" placeholder="CUPO" value="<?php echo set_value('cupo') ?>">

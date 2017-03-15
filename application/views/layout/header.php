@@ -5,5 +5,7 @@
 	<title>SIGECO</title>
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>public/imgs/icon.png">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/bootstrapValidator.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/customer.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>public/css/animate.css">
 </head>

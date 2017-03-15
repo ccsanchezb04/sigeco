@@ -6,6 +6,9 @@
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
+			<div id="cinta1">
+				<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/cinta1.png">
+			</div>
 			<div class="contenedor">
 				<div class="logo">
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
@@ -2053,6 +2056,9 @@
 			<!-- ============================================================================== -->
 			<!-- ============================================================================== -->
 				</div>
+			</div>
+			<div id="cinta2">
+				<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/cinta2.png">
 			</div>
 		</div>
 		<div class="col-md-1"></div>

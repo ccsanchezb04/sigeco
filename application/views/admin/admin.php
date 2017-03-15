@@ -5,6 +5,9 @@
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
+			<div id="cinta1">
+				<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/cinta1.png">
+			</div>
 			<div class="contenedor">
 				<div class="logo">
 					<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/banner.png" title="SIGECO">
@@ -77,6 +80,9 @@
 									</tr>
 									<?php endforeach ?>
 								</table>
+								<div class="text-center">
+									<?php echo $this->pagination->create_links(); ?>
+								</div>
 						  	</div>
 						 	<div class="tab-pane" id="employee">
 						 		<table class="table table-striped">
@@ -107,6 +113,9 @@
 									</tr>
 									<?php endforeach ?>			
 								</table>
+								<div class="text-center">
+									<?php echo $this->pagination->create_links(); ?>
+								</div>
 						 	</div>
 						 	<div class="tab-pane" id="teachers">
 						 		<table class="table table-striped">
@@ -137,104 +146,21 @@
 									</tr>
 									<?php endforeach ?>								
 								</table>
+								<div class="text-center">
+									<?php echo $this->pagination->create_links(); ?>
+								</div>
 						 	</div>						 	
-						</div>
-						
-					</div>
-					<!-- =================================================== -->
-					<!-- =================================================== -->
-
-
-					<!-- =================================================== -->
-					<!-- ===================== * ===================== -->
-					<div class="tab-pane" id="hora">
-						
-						<div class="top-bar">
-							<div class="row">
-								<div class="col-md-2">
-									<a data-toggle="modal" href="#myModal3" class="btn btn-add">
-										<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Agregar
-									</a>
-								</div>
-								<div class="col-md-4"></div>
-								<div class="col-md-6">
-									<form class="navbar-form navbar-right" role="search">
-									  	<div class="form-group">
-									    	<input type="text" class="form-control" placeholder="Buscar Usuario">
-									  	</div>
-									  	<button type="submit" class="btn btn-warning">
-									  		<span class="glyphicon glyphicon-search	"></span>
-									  	</button>
-									</form>
-								</div>			
-							</div>
-						</div>
-
-					</div>
-					<!-- =================================================== -->
-					<!-- =================================================== -->
-
-
-					<!-- =================================================== -->
-					<!-- ===================== * ===================== -->
-					<div class="tab-pane" id="estado">
-						
-						<div class="top-bar">
-							<div class="row">
-								<div class="col-md-2">
-									<a data-toggle="modal" href="#myModal3" class="btn btn-add">
-										<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Agregar
-									</a>
-								</div>
-								<div class="col-md-4"></div>
-								<div class="col-md-6">
-									<form class="navbar-form navbar-right" role="search">
-									  	<div class="form-group">
-									    	<input type="text" class="form-control" placeholder="Buscar Usuario">
-									  	</div>
-									  	<button type="submit" class="btn btn-warning">
-									  		<span class="glyphicon glyphicon-search	"></span>
-									  	</button>
-									</form>
-								</div>			
-							</div>
-						</div>
-
-					</div>
-					<!-- =================================================== -->
-					<!-- =================================================== -->
-
-
-					<!-- =================================================== -->
-					<!-- ===================== * ===================== -->
-					<div class="tab-pane" id="otro">
-						
-						<div class="top-bar">
-							<div class="row">
-								<div class="col-md-2">
-									<a data-toggle="modal" href="#myModal3" class="btn btn-add">
-										<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Agregar
-									</a>
-								</div>
-								<div class="col-md-4"></div>
-								<div class="col-md-6">
-									<form class="navbar-form navbar-right" role="search">
-									  	<div class="form-group">
-									    	<input type="text" class="form-control" placeholder="Buscar Usuario">
-									  	</div>
-									  	<button type="submit" class="btn btn-warning">
-									  		<span class="glyphicon glyphicon-search	"></span>
-									  	</button>
-									</form>
-								</div>			
-							</div>
-						</div>
-
+						</div>						
 					</div>
 					<!-- =================================================== -->
 					<!-- =================================================== -->
 				</div>
 			</div>
+			<div id="cinta2">
+				<img class="img-responsive" src="<?php echo base_url(); ?>public/imgs/cinta2.png">
+			</div>
 		</div>
-		<div class="col-md-1"></div>
+		<div class="col-md-1">
+		</div>
 	</div>
+	

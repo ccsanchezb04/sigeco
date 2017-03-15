@@ -4,8 +4,14 @@ class Materias extends CI_model
 {
 
 	var $codigo_materia = '';
-	var $nombre 		= '';
+	var $nombre_materia	= '';
 	var $nivel 			= '';
+
+	public function lstm()
+	{
+		$query = $this->db->get('materias');
+		return $query->result();
+	}
 
 	public function lstMp()
 	{
@@ -28,7 +34,7 @@ class Materias extends CI_model
 	public function addMateria()
 	{
 		$this->codigo_materia = $this->input->post('id-materia');
-		$this->nombre 		  = $this->input->post('nom-materia');		
+		$this->nombre_materia = $this->input->post('nom-materia');		
 		$this->nivel 	 	  = $this->input->post('nivel');
 
 
@@ -44,7 +50,7 @@ class Materias extends CI_model
 			//echo mysql_error($query);
 			echo "<script type='text/javascript'>";
 			echo "alert('La materia se adiciono con exito....!');";
-			echo "window.location.replace('".base_url()."index.php/Admin/materia');";
+			echo "window.location.replace('".base_url()."Admin/materia');";
 			echo "</script>";
 		}
 	}
@@ -60,7 +66,7 @@ class Materias extends CI_model
 	public function updMateria($codigo_materia)
 	{
 		$this->codigo_materia = $this->input->post('id-materia');
-		$this->nombre 		  = $this->input->post('nom-materia');		
+		$this->nombre_materia = $this->input->post('nom-materia');		
 		$this->nivel 	 	  = $this->input->post('nivel');
 
 		$this->db->where('codigo_materia', $this->codigo_materia);
@@ -75,7 +81,7 @@ class Materias extends CI_model
 		{
 			echo "<script type='text/javascript'>";
 			echo "alert('La materia se modifico con exito....!');";
-			echo "window.location.replace('".base_url()."index.php/Admin/materia');";
+			echo "window.location.replace('".base_url()."Admin/materia');";
 			echo "</script>";
 		}
 	}
@@ -95,7 +101,7 @@ class Materias extends CI_model
 		{
 			echo "<script type='text/javascript'>";
 			echo "alert('La materia se elimino con exito....!');";
-			echo "window.location.replace('".base_url()."index.php/Admin/materia');";
+			echo "window.location.replace('".base_url()."Admin/materia');";
 			echo "</script>";
 		}
 	}

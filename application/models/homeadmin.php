@@ -23,7 +23,6 @@ class Homeadmin extends CI_model
 	var $apellidos_madre 	 = '';
 	var $tel_movil_madre 	 = '';	
 	var $estado 		     = '';
-	var $am_codigo 	   		 = '';
 	//=====================================================================
 	//=====================================================================
 	
@@ -48,6 +47,13 @@ class Homeadmin extends CI_model
 		return $query->result();
 	}
 
+	public function lstU()
+	{
+		$this->no_identificacion = $this->session->userdata("idUser");
+		$query = $this->db->get_where('usuarios', array('no_identificacion' => $this->no_identificacion));
+		return $query->result();
+	}
+
 	public function addUser()
 	{
 		$this->no_identificacion   = $this->input->post('id');
@@ -60,23 +66,34 @@ class Homeadmin extends CI_model
 		$this->correo_electronico  = $this->input->post('correo');
 		$this->rol				   = $this->input->post('rol');
 		$this->estado 		       = $this->input->post('estado');		
-		$this->am_codigo 	       = $this->input->post('am_codigo');
+
 
 
 		if (!$this->db->insert('usuarios', $this)) 
 		{
 			//echo mysql_error($query);
-			echo "<script type='text/javascript'>";
-			echo "alert('Problemas al Adicionar el Usuario!');";
-			echo "</script>";
+			echo "<div class='alert alert-danger fade in bounceIn' id='alert-content'>";
+			echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>";
+			echo "<h4>Error!</h4>";
+			echo "<p>El usuario se agrego con exito...!</p>";
+			echo "<p>";	
+			echo "<a href=".base_url()." type='button' id='alert' class='btn btn-warning'>Aceptar</a>";
+			//echo 'window.location.replace("'.base_url().'");';
+			echo "</p>";
+			echo "</div>";
 		}
 		else
 		{
 			//echo mysql_error($query);
-			echo "<script type='text/javascript'>";
-			echo "alert('El usuario se adiciono con exito....!');";
-			echo "window.location.replace('".base_url()."Admin');";
-			echo "</script>";
+			echo "<div class='alert alert-warning fade in bounceIn' id='alert-content'>";
+			echo "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>";
+			echo "<h4>Felicitaciones!</h4>";
+			echo "<p>El usuario se agrego con exito...!</p>";
+			echo "<p>";	
+			echo "<a href=".base_url()." type='button' id='alert' class='btn btn-warning'>Aceptar</a>";
+			//echo '<script>window.location.replace(".base_url().'admin'");</script>';
+			echo "</p>";
+			echo "</div>";
 		}
 	}
 
@@ -100,7 +117,6 @@ class Homeadmin extends CI_model
 		$this->correo_electronico  = $this->input->post('correo');
 		$this->rol				   = $this->input->post('rol');
 		$this->estado 		       = $this->input->post('estado');	
-		$this->am_codigo 	       = $this->input->post('am_codigo');
 
 		$this->db->where('no_identificacion', $this->no_identificacion);
 

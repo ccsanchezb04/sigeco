@@ -1,7 +1,25 @@
-body { background-color: #666; }
+body {
+	background: url(../imgs/background.png) fixed;
+	background-repeat: no-repeat ;
+	background-size: 1440px 900px; 
+}
+
+div#cinta1 img{ 
+	width: 181px;
+	float: left;
+	margin-top: 10px;
+	margin-left: -60px;
+}
+
+div#cinta2 img{ 
+	width: 181px;
+	float: right;
+	margin-right: -65px;
+	margin-top: -100px;
+}
 
 .contenedor { 
-	background-color: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 0.6);
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px #fff; 
 	padding: 20px;
@@ -31,24 +49,27 @@ body { background-color: #666; }
 /* ============================================================================================= */
 /* ================================= Barra de navegacion Admin ================================= */
 
-.nav-admin, .nav-users {
-	background-color: #666;
+.nav-admin, .nav-users, .pagination li a, .pagination li span {
+	background-color: #666;	
 	border-radius: 5px;
+	/*border: 1px solid transparent;*/
 	margin-top: 20px;
 }
 
 .nav-pills li.active a, .nav-pills li.active a:hover, .nav-pills li.active a:focus,
-.nav-admin li.active a, .nav-admin li.active a:hover, .nav-admin li.active a:focus {
+.nav-admin li.active a, .nav-admin li.active a:hover, .nav-admin li.active a:focus,
+.pagination .active a, .pagination .active span, .pagination .active a:hover,
+.pagination .active span:hover, .pagination .active a:focus, .pagination .active span:focus {
 	color: #fff;
 	background-color: #E27E13;	
 }
 
-.nav-admin a, .nav-users a { 
+.nav-admin a, .nav-users a, .pagination a { 
 	color: #fff;
 	text-align: center; 
 }
 
-.nav-admin a:hover, .nav-users a:hover { color: #000; }
+.nav-admin a:hover, .nav-users a:hover, .pagination a:hover { color: #000; }
 
 .top-bar { margin-top: 20px; }
 
@@ -72,7 +93,7 @@ body { background-color: #666; }
 /* ================================= CRUD Usuarios Admin ================================= */
 
 .contenedor-crud {
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 10px;
 	box-shadow: 2px 2px 4px #fff; 
 	padding: 50px 80px;	
@@ -89,6 +110,7 @@ body { background-color: #666; }
 
 .panel-default {
 	background-color: transparent;
+	border: none;
 	border-radius: 5px;
 	margin-top: 30px;	
 }
@@ -103,3 +125,24 @@ body { background-color: #666; }
 
 /* ============================================================================================= */
 /* ============================================================================================= */
+
+/* ============================================================================================= */
+/* ========================================= Empleado ========================================== */
+
+/* #calif {
+	text-align: center;
+	width: 50px;
+} */
+
+/* ============================================================================================= */
+/* ============================================================================================= */
+
+#valor {
+	background: transparent;
+	border: none;
+}
+
+#alert-content {
+	position: relative;
+	margin-top: 50%;
+}

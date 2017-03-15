@@ -20,8 +20,12 @@
 							<td><?php echo $key->codigo_grupo; ?></td>
 						</tr>
 						<tr>
-							<td>Nombre Grupo</td>
+							<td>Grupo</td>
 							<td><?php echo $key->grupo; ?></td>
+						</tr>
+						<tr>
+							<td>Nombre</td>
+							<td><?php echo $key->nombre_grupo; ?></td>
 						</tr>
 						<tr>
 							<td>Cupo</td>

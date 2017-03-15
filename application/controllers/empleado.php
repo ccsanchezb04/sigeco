@@ -9,8 +9,13 @@ class Empleado extends CI_Controller
 		$this->load->database();
 		$this->load->model('homeemployed');
 		$this->load->model('matricula');
+		$this->load->model('asignacion');
+		$this->load->model('asigjefe');
+	// =================================================
 		$this->load->model('homeadmin');
-		$this->load->model('grupos');	
+		$this->load->model('grupos');
+		$this->load->model('materias');
+		$this->load->model('horarios');	
 		$this->removeCache();
 	}
 
@@ -343,6 +348,222 @@ class Empleado extends CI_Controller
 	public function dltMat($no_identificacion)
 	{
 		$this->matricula->dltMat($no_identificacion);
+	}
+/* ================================================================================== */
+/* ================================================================================== */
+
+/* ================================================================================== */
+/* =================================== ASIGNACION =================================== */
+	public function asignacion()
+	{
+		$data['lsta'] = $this->asignacion->lsta();
+		$data['lstaj'] = $this->asigjefe->lstAsingj();
+
+		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['lstg'] = $this->grupos->lstg();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asignacion/asignacion', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function asig($no_identificacion)
+	{
+		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['lsta'] = $this->asignacion->asig($no_identificacion);
+		//$data['cont'] = $this->asignacion->contAsig($no_identificacion);
+		$data['lstaj'] = $this->asigjefe->lstAsingj();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asignacion/asignacion', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function addAsig()
+	{
+		if ($_POST) 
+		{			
+			$this->form_validation->set_rules('profesor', 'Profesor', 'required');
+			$this->form_validation->set_rules('grupo', 'Grupo', 'required');
+			$this->form_validation->set_rules('materia', 'Materia', 'required');
+			$this->form_validation->set_rules('horario', 'Horario', 'required');
+			$this->form_validation->set_rules('dia', 'Dia', 'required');						
+
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger alert-dismissable">
+  															<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>', '
+  														  </div>');
+
+			if ($this->form_validation->run() == true) 
+			{
+				$this->asignacion->addAsig();
+			}		
+		}
+
+		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['lstg'] = $this->grupos->lstg();
+		$data['lstm'] = $this->materias->lstm();
+		$data['lsth'] = $this->horarios->lsth();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asignacion/add', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function lstAsig($no_identificacion)
+	{
+		$data['lsta'] = $this->asignacion->lstAsig($no_identificacion);
+
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asignacion/lst', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function updAsig($no_identificacion)
+	{
+		if ($_POST) 
+		{			
+			$this->form_validation->set_rules('profesor', 'Profesor', 'required');
+			$this->form_validation->set_rules('grupo', 'Grupo', 'required');
+			$this->form_validation->set_rules('materia', 'Materia', 'required');
+			$this->form_validation->set_rules('horario', 'Horario', 'required');
+			$this->form_validation->set_rules('dia', 'Dia', 'required');			
+
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger alert-dismissable">
+  															<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>', '
+  														  </div>');
+
+			if ($this->form_validation->run() == true) 
+			{
+				$this->asignacion->updAsig($no_identificacion);
+			}		
+		}
+
+		$data['lsta'] = $this->asignacion->lstAsig($no_identificacion);
+		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['lstg'] = $this->grupos->lstg();
+		$data['lstm'] = $this->materias->lstm();
+		$data['lsth'] = $this->horarios->lsth();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asignacion/upd', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function dltAsig($codigo_asignacion)
+	{
+		$this->asignacion->dltAsig($codigo_asignacion);
+	}
+/* ================================================================================== */
+/* ================================================================================== */
+
+/* ================================================================================== */
+/* ================================ ASIGNACION JEFE ================================= */
+	public function addAj()
+	{
+		if ($_POST) 
+		{			
+			$this->form_validation->set_rules('grupo', 'Grupo', 'required');
+			$this->form_validation->set_rules('profesor', 'Profesor', 'required');			
+
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger alert-dismissable">
+  															<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>', '
+  														  </div>');
+
+			if ($this->form_validation->run() == true) 
+			{
+				$this->asigjefe->addAj();
+			}		
+		}
+
+		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['lstg'] = $this->grupos->lstg();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asig_jefe/add', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function lstAj($codigo_aj, $no_identificacion, $codigo_grupo)
+	{
+		$data['lstaj'] = $this->asigjefe->lstAj($codigo_aj, $no_identificacion, $codigo_grupo);
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asig_jefe/lst', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function updAj($codigo_aj, $no_identificacion, $codigo_grupo)
+	{
+		if ($_POST) 
+		{			
+			$this->form_validation->set_rules('grupo', 'Grupo', 'required');
+			$this->form_validation->set_rules('profesor', 'Profesor', 'required');			
+
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger alert-dismissable">
+  															<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>', '
+  														  </div>');
+
+			if ($this->form_validation->run() == true) 
+			{
+				$this->asigjefe->updAj($codigo_aj, $no_identificacion, $codigo_grupo);
+			}		
+		}
+
+		$data['lstp'] = $this->homeadmin->lstProfesor();
+		$data['lstaj'] = $this->asigjefe->lstAj($codigo_aj, $no_identificacion, $codigo_grupo);
+		$data['lstg'] = $this->grupos->lstg();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/asig_jefe/upd', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function dltAj($codigo_aj)
+	{
+		$this->asigjefe->dltAj($codigo_aj);
+	}
+/* ================================================================================== */
+/* ================================================================================== */
+
+/* ================================================================================== */
+/* ===================================== GRUPOS ===================================== */
+	public function grupos()
+	{
+		$data['lstp'] = $this->grupos->lstp();
+		$data['lsts'] = $this->grupos->lsts();
+		$data['lstt'] = $this->grupos->lstt();
+		$data['lstc'] = $this->grupos->lstc();
+		$data['lstq'] = $this->grupos->lstq();
+		$data['lstsx'] = $this->grupos->lstsx();
+		$data['lstsp'] = $this->grupos->lstsp();
+		$data['lsto'] = $this->grupos->lsto();
+		$data['lstn'] = $this->grupos->lstn();
+		$data['lstd'] = $this->grupos->lstd();
+		$data['lstud'] = $this->grupos->lstud();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/grupo/grupo', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function conCalf($grupo_codigo)
+	{
+		//$grupo_codigo = $codigo_grupo;
+		$data['jefe'] =$this->asigjefe->lstAj($grupo_codigo);
+		$data['gm'] = $this->asignacion->asigMg($grupo_codigo);
+		//$data['calif'] = $this->hometeacher->lstCalif();
+		$this->load->view('layout/header');
+		$this->load->view('empleado/grupo/calificacion', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function conAlnm($grupo)
+	{
+		$data['alnm'] = $this->matricula->conAlnm($grupo);
+		$this->load->view('layout/header');
+		$this->load->view('empleado/grupo/alumno', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function conGrupo($codigo_grupo, $grupo)
+	{
+		$data['datosj'] = $this->asigjefe->lstAj($codigo_grupo);
+		$data['datosg'] = $this->grupos->lstGrupo($codigo_grupo);
+		$this->load->view('layout/header');
+		$this->load->view('empleado/grupo/datos', $data, $grupo);
+		$this->load->view('layout/footer');
 	}
 /* ================================================================================== */
 /* ================================================================================== */

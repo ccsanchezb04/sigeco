@@ -454,4 +454,30 @@ class Matricula extends CI_model
 			echo "</script>";
 		}
 	}
+
+	public function conAlnm($grupo)
+	{
+		$this->grupo = $grupo;
+
+		$query1 = "SELECT *
+		 		   FROM usuarios
+		 		   INNER JOIN matriculas 
+		           ON usuarios.no_identificacion = matriculas.no_identificacion
+		 		   WHERE matriculas.grupo = '$this->grupo';";
+
+		$query = $this->db->query($query1);
+		return $query->result();
+	}
+
+	/*public function conDatos($grupo)
+	{
+		$this->grupo = $grupo;
+
+		$query1 = 
+
+		//echo "$query1";
+
+		$query = $this->db->query("$query1");
+		return $query1->result();
+	}*/
 }

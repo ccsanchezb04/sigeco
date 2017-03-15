@@ -27,7 +27,7 @@ class Login extends CI_Controller
 				redirect(base_url().'Profesor', 'refresh');
 				break;
 
-			case 'ALUMNO':
+			case 'ESTUDIANTE':
 				redirect(base_url().'Estudiante', 'refresh');
 				break;
 			
@@ -56,6 +56,6 @@ class Login extends CI_Controller
 	{
 		$this->session->sess_destroy();
 	    redirect(base_url(), 'refresh');
-}
+	}
 
 }
